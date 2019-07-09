@@ -84,7 +84,52 @@
 		</div>
 	</div>
 	<script>
-	  // your solution here
+	  var rotateBox = document.getElementById('rotate-box');
+    var rotateManager = new Hammer(rotateBox);
+    rotateManager.get('rotate').set({ enable: true });
+    rotateManager.on('rotate', function(ev) {
+      rotateBox.style.backgroundColor = 'black';
+      rotateBox.style.color = 'white';
+      rotateBox.textContent = 'rotated';
+    })
+    var pinchBox = document.getElementById('pinch-box');
+    var pinchManager = new Hammer(pinchBox);
+    pinchManager.get('pinch').set({enable: true});
+    pinchManager.on('pinch', function(ev) {
+      pinchBox.style.backgroundColor = 'black';
+      pinchBox.style.color = 'white';
+      pinchBox.textContent = "pinched"; 
+    })
+    var pressBox = document.getElementById('press-box');
+    var pressManager = new Hammer(pressBox);
+    pressManager.on("press", function(ev) {
+      pressBox.style.backgroundColor = 'black';
+      pressBox.style.color = 'white';
+      pressBox.textContent = "pressed";  
+    })
+    var panBox = document.getElementById('pan-box');
+    var panManager = new Hammer(panBox);
+    panManager.on("pan", function(ev) {
+      panBox.style.backgroundColor = 'black';
+      panBox.style.color = 'white';
+      panBox.textContent = "panned";  
+    })
+    var tapBox = document.getElementById('tap-box');
+    var tapManager = new Hammer(tapBox);
+    tapManager.on("tap", function(ev) {
+      tapBox.style.backgroundColor = 'black';
+      tapBox.style.color = 'white';
+      tapBox.textContent = "tapped";  
+    })
+    var swipeBox = document.getElementById('swipe-box');
+    var swipeManager = new Hammer(swipeBox);
+    swipeManager.on("swipe", function(ev) {
+      swipeBox.style.backgroundColor = 'black';
+      swipeBox.style.color = 'white';
+      swipeBox.textContent = "swiped";  
+    })
+    
+    
   </script>
 </body>
 </html>
